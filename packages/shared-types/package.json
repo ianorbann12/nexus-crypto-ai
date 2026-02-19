@@ -1,0 +1,16 @@
+{
+  "name": "@nexus/shared-types",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@nexus/tsconfig": "workspace:*",
+    "typescript": "^5.7.0"
+  }
+}

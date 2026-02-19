@@ -1,0 +1,25 @@
+{
+  "name": "nexus-crypto-ai",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:api": "turbo run dev --filter=@nexus/api",
+    "dev:ml": "cd apps/ml-service && uvicorn src.main:app --reload --host 0.0.0.0 --port 8000",
+    "dev:mobile": "turbo run dev --filter=@nexus/mobile",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean",
+    "db:generate": "turbo run db:generate --filter=@nexus/api",
+    "db:migrate": "turbo run db:migrate --filter=@nexus/api",
+    "db:seed": "tsx scripts/seed-db.ts",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.4.0",
+    "turbo": "^2.3.0",
+    "tsx": "^4.19.0"
+  }
+}

@@ -61,7 +61,7 @@ export class AuthController {
 
   logout = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-      await this.service.logout(request.user.id);
+      await this.service.logout(request.user.sub);
       return reply.code(204).send();
     } catch (err) {
       return this.handleError(err, reply);
@@ -70,7 +70,7 @@ export class AuthController {
 
   me = async (request: FastifyRequest, reply: FastifyReply) => {
     try {
-      const user = await this.service.getUserById(request.user.id);
+      const user = await this.service.getUserById(request.user.sub);
       return reply.send(user);
     } catch (err) {
       return this.handleError(err, reply);
